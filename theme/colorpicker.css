@@ -44,23 +44,23 @@
 
 /* ---- Palettes ---- */
 
-/*#colorpicker .ui-layout-center .ui-palette {*/
-/*	margin: 6px;*/
-/*}*/
+.colorpicker .ui-layout-center .palette {
+	margin: 6px;
+}
 
-/*#colorpicker .ui-palette .ui-palette-swatch {*/
-/*	float: left;*/
-/*	width: 20px;*/
-/*	height: 20px;*/
-/*	border: 1px solid #eee;*/
-/*	margin: 0 1px 1px 0;*/
-/*}*/
+.colorpicker .palette div {
+	float: left;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #eee;
+	margin: 0 1px 1px 0;
+}
 
-/*#colorpicker .ui-palette .ui-palette-match {*/
-/*	border: 2px solid black;*/
-/*	width: 18px;*/
-/*	height: 18px;*/
-/*}*/
+.colorpicker .palette .ui-state-active {
+	border: 2px solid black;
+	width: 18px;
+	height: 18px;
+}
 
 /* ---- Colour Info ---- */
 
