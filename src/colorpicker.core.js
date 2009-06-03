@@ -17,6 +17,33 @@
 $('.colorpicker')
 	.roleStage('bind', function() {
 		$(this)
+			// ---- Dialog button actions ----
+			
+			.roleAction('action-apply', function(event) {
+//				console.log('apply');
+				var color = $.data(this, 'color').toString();
+				$(this).closest('[data-color]').attr('data-color', color);
+				return false;
+			})
+			
+			.roleAction('action-ok', function(event) {
+//				console.log('ok');
+				$(this)
+					.trigger('action-apply')
+					.trigger('action-cancel');
+				return false;
+			})
+			
+			.roleAction('action-cancel', function(event) {
+//				console.log('cancel');
+				$(this)
+					.closest(':role(dialog)')
+					.attr('aria-hidden', true);
+				return false;
+			})
+
+			// ---- Color modification events ----
+
 			.bind('color.colorpicker', function(event, fn) {
 				var color;
 				
@@ -35,7 +62,8 @@ $('.colorpicker')
 			});
 	})
 	.roleStage('activate', function() {
-		$(this).trigger('color', [$.attr(this, 'data-color') || '#fff']);
+		var color = $(this).closest('[data-color]').attr('data-color') || 'transparent';
+		$(this).trigger('color', [color]);
 	});
 
 })(jQuery);
