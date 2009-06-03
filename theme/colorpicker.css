@@ -6,17 +6,7 @@
 	height: 330px;
 }
 
-/* ---- Tabs ---- */
-
-/*#colorpicker .ui-layout-center {*/
-/*	padding: 0;*/
-/*}*/
-
 /* ---- HSV picker ---- */
-
-/*#colorpicker .ui-surface {*/
-/*	position: relative;*/
-/*}*/
 
 .colorpicker .satval-area {
 	margin: 6px;
@@ -84,16 +74,12 @@
 	width: 8em;
 	border: 1px solid black;
 	text-align: center;
-/*	position: relative;*/
 }
 
 .colorpicker .color-string {
 	text-align: center;
 	font-family: sans-serif;
 	width: 7em;
-/*	position: absolute;*/
-/*	bottom: 0.5em;*/
-/*	left: 0.5em;*/
 	border: 1px solid black;
 	display: inline;
 	
