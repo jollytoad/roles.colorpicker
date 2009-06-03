@@ -1,0 +1,138 @@
+
+/* ---- Dialog ---- */
+
+#colorpicker {
+	width: 480px;
+	height: 330px;
+}
+
+/* ---- Tabs ---- */
+
+/*#colorpicker .ui-layout-center {*/
+/*	padding: 0;*/
+/*}*/
+
+/* ---- HSV picker ---- */
+
+/*#colorpicker .ui-surface {*/
+/*	position: relative;*/
+/*}*/
+
+.colorpicker .satval-area {
+	margin: 6px;
+	width: 256px;
+	height: 256px;
+	background-image: url('ui-color-mask-hsv.png');
+	display: inline-block;
+}
+
+.colorpicker .satval-area .ui-reticle {
+	width: 13px;
+	height: 13px;
+	margin-left: -6px;
+	margin-top: -6px;
+	background-image: url('ui-reticle.png');
+	background-repeat: no-repeat;
+}
+
+.colorpicker .hue-slider {
+	margin: 6px;
+	width: 20px;
+	height: 256px;
+	background-image: url('ui-color-slider-hue.png');
+	display: inline-block;
+}
+
+.colorpicker .hue-slider .ui-reticle {
+	width: 20px;
+	height: 9px;
+	margin-left: 0px;
+	margin-top: -4px;
+	background-image: url('ui-color-slider-handle.png');
+	background-repeat: no-repeat;
+}
+
+/* ---- Palettes ---- */
+
+/*#colorpicker .ui-layout-center .ui-palette {*/
+/*	margin: 6px;*/
+/*}*/
+
+/*#colorpicker .ui-palette .ui-palette-swatch {*/
+/*	float: left;*/
+/*	width: 20px;*/
+/*	height: 20px;*/
+/*	border: 1px solid #eee;*/
+/*	margin: 0 1px 1px 0;*/
+/*}*/
+
+/*#colorpicker .ui-palette .ui-palette-match {*/
+/*	border: 2px solid black;*/
+/*	width: 18px;*/
+/*	height: 18px;*/
+/*}*/
+
+/* ---- Colour Info ---- */
+
+.colorpicker .info-sidebar {
+	padding: 2px;
+}
+
+.colorpicker .color-sample {
+	height: 2em;
+	padding-top: 5em;
+	width: 8em;
+	border: 1px solid black;
+	text-align: center;
+/*	position: relative;*/
+}
+
+.colorpicker .color-string {
+	text-align: center;
+	font-family: sans-serif;
+	width: 7em;
+/*	position: absolute;*/
+/*	bottom: 0.5em;*/
+/*	left: 0.5em;*/
+	border: 1px solid black;
+	display: inline;
+	
+}
+
+.colorpicker .channel-inputs {
+	margin: 1ex 0;
+	text-align: center;
+}
+.colorpicker .channel-inputs label {
+	display: block;
+}
+.colorpicker .channel-inputs label span {
+	width: 1.3em;
+	display: inline-block;
+	text-align: right;
+	padding-right: 0.5em;
+}
+.colorpicker .channel-inputs input {
+	text-align: right;
+	padding: 0;
+}
+
+/* ---- Recent palette & Buttons ---- */
+
+/*#colorpicker .ui-layout-south {*/
+/*	margin-top: 4px;*/
+/*}*/
+
+/*#colorpicker .ui-layout-south .ui-palette {*/
+/*	position: absolute;*/
+/*	height: 22px;*/
+/*	left: 0;*/
+/*	bottom: 0;*/
+/*	overflow: hidden;*/
+/*}*/
+
+/*#colorpicker .ui-layout-south .buttons {*/
+/*	float: right;*/
+/*	margin: 0 16px 0 4px;*/
+/*}*/
+
