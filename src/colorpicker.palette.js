@@ -17,39 +17,55 @@
  */
 (function($) {
 
+function createSwatch(color, key) {
+	return $('<div></div>')
+		.attr({
+			'role': 'option',
+			'title': (color.name ? color.name + ': ' : '') + color.toString()
+		})
+		.data('color', color)
+		.data('key', key)
+		.css('background-color', color.toCSS());
+}
+
 $('.colorpicker :role(listbox)[data-palette]')
 
 	.roleStage('bind', function() {
-		var palette = $(this);
 		$(this)
 		
 			// ---- Custom attributes ----
 			
 			.bind('attr.@data-palette.colorpicker', function(event) {
-				$(this).empty();
+				var self = this,
+					palette = event.newValue;
 				
-				$.roles.whenVisible( this, function() {
-					var self = this;
-					
-					$.each($.color.palette[event.newValue] || {}, function(i, c) {
-						var color = new $.Color(c);
-			
-						if (!color.name && typeof i === 'string') {
-							color.name = i;
-						}
-			
-						$('<div></div>')
-							.attr({
-								'role': 'option',
-								'title': (color.name ? color.name + ': ' : '') + color.toString()
-							})
-							.data('color', color)
-							.css('background-color', color.to('CSS'))
-							.appendTo(self);
+				function refresh() {
+					$.roles.whenVisible(self, 'color-palette-'+palette, function() {
+						$(self).empty();
+				
+						$.each($.color.palette[palette] || {}, function(i, c) {
+							var color = new $.Color(c);
+		
+							if (!color.name && typeof i === 'string') {
+								color.name = i;
+							}
+							
+							createSwatch(color, i).appendTo(self);
+						});
+						
+						$(self).roleSetup();
 					});
-					
-					$(this).roleSetup();
-				});
+				}
+				
+				if ( event.prevValue ) {
+					$.roles.whenVisible(self, 'color-palette-'+event.prevValue);
+					$().unbind('color-palette-'+event.prevValue);
+				}
+				
+				if ( palette ) {
+					$().bind('color-palette-'+palette, refresh);
+					refresh();
+				}
 			})
 		
 			// ---- Actions ----
@@ -68,11 +84,26 @@ $('.colorpicker :role(listbox)[data-palette]')
 				return false;
 			})
 			
+			// Choose the colour swatch
+			.roleAction('action-select', function(event) {
+				var color = $(event.target).closest(':role(option)').data('color');
+				if ( color ) {
+					$(event.target).trigger('color', [color]);
+				}
+				return false;
+			})
+			
+			// ---- Mouse ----
+			
+			.roleBind('click', 'action-select')
+			
 			// ---- Keys ----
 			
 			.roleKey('up', 'action-prev-row')
-			.roleKey('down', 'action-next-row');
-			
+			.roleKey('down', 'action-next-row')
+			.roleKey('enter', 'action-select')
+
+			.end();
 	})
 	
 	.roleStage('init', function() {
