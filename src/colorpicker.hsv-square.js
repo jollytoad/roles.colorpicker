@@ -33,14 +33,13 @@ $('.colorpicker .satval-area')
 			
 			.closest('.colorpicker')
 				.bind('data.@color.colorpicker', function(event) {
-					if ( square.is(':visible') ) {
-						var hsv = event.newValue.to('HSV'),
-							hue = $.Color([hsv[0],1,1], 'HSV').toCSS();
-				
+					var color = event.newValue;
+					$.roles.whenVisible(square, 'colorpicker-satval-area', function() {
+						var hsv = color.toHSV();
 						square
-							.css('background-color', hue)
+							.css('background-color', $.Color([hsv[0],1,1], 'HSV').toCSS())
 							.area('option', {x: hsv[1], y: 1 - hsv[2] });
-					}
+					});
 				})
 			.end();
 	});
@@ -56,12 +55,10 @@ $('.colorpicker .hue-slider')
 			
 			.closest('.colorpicker')
 				.bind('data.@color.colorpicker', function(event) {
-					if ( slider.is(':visible') ) {
-						var hsv = event.newValue.toHSV();
-					
-						slider
-							.vertical('option', { value: hsv[0] });
-					}
+					var color = event.newValue;
+					$.roles.whenVisible(slider, 'colorpicker-hue-slider', function() {
+						slider.vertical('option', { value: color.toHSV()[0] });
+					});
 				})
 			.end();
 	});
