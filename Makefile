@@ -1,4 +1,4 @@
-PACKAGE = jquery-roles-colorpicker
+PACKAGE = jquery.roles-colorpicker
 
 MODULES = \
 	colorpicker.core.js \
