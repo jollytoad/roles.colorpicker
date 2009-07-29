@@ -10,5 +10,8 @@ MODULES = \
 EXTRAS = \
 	theme
 
+CSS = \
+	colorpicker.css
+
 include build/rules.mk
 
