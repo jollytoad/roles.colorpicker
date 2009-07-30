@@ -5,7 +5,8 @@ MODULES = \
 	colorpicker.hsv-square.js \
 	colorpicker.info.js \
 	colorpicker.palette.js \
-	colorpicker.history.js
+	colorpicker.history.js \
+	colorpicker.related.js
 
 EXTRAS = \
 	theme
