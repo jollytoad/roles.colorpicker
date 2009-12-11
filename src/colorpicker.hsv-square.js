@@ -1,5 +1,5 @@
 /*
- * jQuery Colour Picker - HSV widget @VERSION (@DATE)
+ * jQuery Colour Picker - HSV widget @VERSION
  *
  * Copyright (c) 2009 Adaptavist.com
  * Dual licensed under the MIT and GPL licenses.

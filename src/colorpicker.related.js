@@ -1,5 +1,5 @@
 /*
- * jQuery Colour Picker - Related colours palette @VERSION (@DATE)
+ * jQuery Colour Picker - Related colours palette @VERSION
  *
  * Copyright (c) 2009 Adaptavist.com
  * Dual licensed under the MIT and GPL licenses.

@@ -1,5 +1,5 @@
 /*!
- * jQuery Colour Picker @VERSION (@DATE)
+ * jQuery Colour Picker @VERSION
  *
  * Copyright (c) 2009 Adaptavist.com
  * Dual licensed under the MIT and GPL licenses.

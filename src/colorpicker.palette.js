@@ -1,5 +1,5 @@
 /*
- * jQuery Colour Picker - Colour info widgets @VERSION (@DATE)
+ * jQuery Colour Picker - Colour info widgets @VERSION
  *
  * Copyright (c) 2009 Adaptavist.com
  * Dual licensed under the MIT and GPL licenses.
