@@ -59,11 +59,11 @@ $('.colorpicker :role(listbox)[data-palette]')
 				
 				if ( event.prevValue ) {
 					$.roles.whenVisible(self, 'color-palette-'+event.prevValue);
-					$().unbind('color-palette-'+event.prevValue);
+					$(document).unbind('color-palette-'+event.prevValue);
 				}
 				
 				if ( palette ) {
-					$().bind('color-palette-'+palette, refresh);
+					$(document).bind('color-palette-'+palette, refresh);
 					refresh();
 				}
 			})
